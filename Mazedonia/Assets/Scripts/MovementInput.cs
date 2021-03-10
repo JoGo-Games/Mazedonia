@@ -7,6 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class MovementInput : MonoBehaviour
 {
+    public bool moving;
+
     public LevelController level;
     public float Velocity;
     [Space]
@@ -41,6 +43,7 @@ public class MovementInput : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        moving = false;
         initialPos = gameObject.transform.position;
         anim = this.GetComponent<Animator>();
         controller = this.GetComponent<CharacterController>();
@@ -76,6 +79,7 @@ public class MovementInput : MonoBehaviour
                         {
                             transform.position = new Vector3(transform.position.x, 2.0f, transform.position.z);
                             step = 2;
+                            AudioManager.instance.Play("Player Fly");
                         }
                         break;
                     }
@@ -85,6 +89,7 @@ public class MovementInput : MonoBehaviour
                         if (((transform.position.x <= initialPos.x + 0.05f) && (transform.position.x >= initialPos.x - 0.05f)) && ((transform.position.z >= initialPos.z - 0.05f) && (transform.position.z <= initialPos.z + 0.05f)))
                         {
                             transform.position = new Vector3(initialPos.x, 2.0f, initialPos.z);
+                            AudioManager.instance.Play("Player Reset");
                             step = 3;
                         }
                         break;
@@ -160,11 +165,21 @@ public class MovementInput : MonoBehaviour
 
         if (Speed > allowPlayerRotation)
         {
+            if(!moving)
+            {
+                moving = true;
+                AudioManager.instance.Play("Player Footstep");
+            }
             anim.SetFloat("Blend", Speed, StartAnimTime, Time.deltaTime);
             PlayerMoveAndRotation();
         }
         else if (Speed < allowPlayerRotation)
         {
+            if (moving)
+            {
+                moving = false;
+                AudioManager.instance.Stop("Player Footstep");
+            }
             anim.SetFloat("Blend", Speed, StopAnimTime, Time.deltaTime);
         }
     }
@@ -174,5 +189,10 @@ public class MovementInput : MonoBehaviour
         anim.SetFloat("Blend", 0.0f, 0.0f, Time.deltaTime);
         reset = true;
         step = 1;
+        if (moving)
+        {
+            moving = false;
+            AudioManager.instance.Stop("Player Footstep");
+        }
     }
 }

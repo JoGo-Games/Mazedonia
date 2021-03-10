@@ -20,4 +20,10 @@ public class TimerController : MonoBehaviour
         }
         timeText.text = "" + minutes.ToString("00") + ":" + seconds.ToString("00.00").Replace(",", ":");
     }
+
+    public float Get_Score()
+    {
+        float score = (minutes * 60.0f) + seconds;
+        return score;
+    }
 }

@@ -5,11 +5,19 @@ using UnityEngine;
 public class TransitionController : MonoBehaviour
 {
     public Animator animator;
+    public Animator mainmenuanimator;
     public GameObject mainmenu;
+    public GameObject credits;
     public GameObject options;
     public GameObject levels;
     public GameObject controls;
+
     public float transitionTime;
+
+    private void Start()
+    {
+        mainmenuanimator.Play("menuenteranim", -1, 0f);
+    }
 
     public void Change_scene(int menu)
     {
@@ -18,7 +26,9 @@ public class TransitionController : MonoBehaviour
 
     IEnumerator Change_menu(int menu)
     {
+        
         animator.Play("menutransitionanim", -1, 0f);
+        AudioManager.instance.Play("Menu Transition");
 
         yield return new WaitForSeconds(transitionTime);
 
@@ -33,6 +43,18 @@ public class TransitionController : MonoBehaviour
             case 2:
                 {
                     levels.SetActive(false);
+                    mainmenu.SetActive(true);
+                    break;
+                }
+            case 3:
+                {
+                    mainmenu.SetActive(false);
+                    credits.SetActive(true);
+                    break;
+                }
+            case 4:
+                {
+                    credits.SetActive(false);
                     mainmenu.SetActive(true);
                     break;
                 }
