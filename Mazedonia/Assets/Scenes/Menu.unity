@@ -2443,6 +2443,18 @@ MonoBehaviour:
           m_StringArgument: Button
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1989650611}
+        m_TargetAssemblyTypeName: LevelsMenuController, Assembly-CSharp
+        m_MethodName: Start_Level
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &906093995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2899,6 +2911,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1989650611}
+        m_TargetAssemblyTypeName: LevelsMenuController, Assembly-CSharp
+        m_MethodName: Start_Level
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &980462559
@@ -3859,6 +3883,18 @@ MonoBehaviour:
           m_StringArgument: Button
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1989650611}
+        m_TargetAssemblyTypeName: LevelsMenuController, Assembly-CSharp
+        m_MethodName: Start_Level
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1182848240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3989,6 +4025,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Button
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1989650611}
+        m_TargetAssemblyTypeName: LevelsMenuController, Assembly-CSharp
+        m_MethodName: Start_Level
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1213873054
@@ -6519,7 +6567,7 @@ MonoBehaviour:
   leftarrow: {fileID: 30520367}
   rightarrow: {fileID: 34625199}
   highscore: {fileID: 1898057054}
-  level: 1
+  level: 0
 --- !u!1 &2042003950
 GameObject:
   m_ObjectHideFlags: 0

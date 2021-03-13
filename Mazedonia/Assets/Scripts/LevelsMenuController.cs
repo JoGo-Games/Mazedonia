@@ -80,6 +80,7 @@ public class LevelsMenuController : MonoBehaviour
                     break;
                 }
         }
+        Debug.Log(level);
         highscore.text = Get_Score();
     }
 

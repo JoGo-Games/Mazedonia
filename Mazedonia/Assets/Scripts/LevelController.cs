@@ -14,6 +14,7 @@ public class LevelController : MonoBehaviour
     public GameObject pausemenu;
     public TextMeshProUGUI timertext;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI levelTitle;
 
     public int level_index;
     public float transitionTime;
@@ -23,6 +24,7 @@ public class LevelController : MonoBehaviour
     private void Start()
     {
         level_index = SceneManager.GetActiveScene().buildIndex;
+        levelTitle.text = "Level " + level_index;
     }
 
     private void Update()
@@ -51,6 +53,13 @@ public class LevelController : MonoBehaviour
         float current_score = timer.Get_Score();
         Save_Score(current_score, scoreText.text);
         Change_State(false);
+        if (level_index != 6)
+        {
+            if (level_index + 1 > PlayerPrefs.GetInt("unlocked_level"))
+            {
+                PlayerPrefs.SetInt("unlocked_level", level_index + 1);
+            }
+        }
     }
 
     public void Change_State(bool state)
@@ -92,15 +101,13 @@ public class LevelController : MonoBehaviour
     public void Next_Level()
     {
         SceneManager.LoadScene(level_index+1);
-        if (level_index + 1 > PlayerPrefs.GetInt("unlocked_level"))
-        {
-            PlayerPrefs.SetInt("unlocked_level", level_index + 1);
-        }
+        Time.timeScale = 1;
     }
 
     public void Save_Score(float current_score, string current_scoretext)
     {
-        if (PlayerPrefs.GetFloat("level" + level_index + "score") > current_score)
+        float lastscore = PlayerPrefs.GetFloat("level" + level_index + "score", 0f);
+        if ((lastscore == 0f) || ( lastscore > current_score))
         {
             PlayerPrefs.SetFloat("level" + level_index + "score", current_score);
             PlayerPrefs.SetString("level" + level_index + "scoretext", current_scoretext);
