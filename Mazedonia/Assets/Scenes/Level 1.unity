@@ -7842,7 +7842,7 @@ RectTransform:
   - {fileID: 1552994189}
   - {fileID: 1775889374}
   m_Father: {fileID: 1371560734012054709}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7897,10 +7897,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -7927,7 +7927,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &662190818
 MonoBehaviour:
@@ -26059,6 +26059,18 @@ PrefabInstance:
     - target: {fileID: 1472744680246192973, guid: 8ce1c05b29ef2184fa655ea5886c5c07, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472744680246192974, guid: 8ce1c05b29ef2184fa655ea5886c5c07, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472744680246192974, guid: 8ce1c05b29ef2184fa655ea5886c5c07, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472744680246192974, guid: 8ce1c05b29ef2184fa655ea5886c5c07, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 1472744680337473819, guid: 8ce1c05b29ef2184fa655ea5886c5c07, type: 3}
       propertyPath: player

@@ -21,8 +21,8 @@ public class LevelsMenuController : MonoBehaviour
 
     private void Start()
     {
-        level = PlayerPrefs.GetInt("unlocked_level");
-        if (PlayerPrefs.GetInt("unlocked_level") == 1)
+        level = PlayerPrefs.GetInt("unlocked_level", 1);
+        if (level == 1)
         {
             leftarrow.GetComponent<Button>().interactable = false;
         }
